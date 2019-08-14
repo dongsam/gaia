@@ -36,3 +36,5 @@ require (
 	google.golang.org/appengine v1.4.0 // indirect
 	google.golang.org/genproto v0.0.0-20190701230453-710ae3a149df // indirect
 )
+
+replace github.com/cosmos/cosmos-sdk => /Users/dongsamb/git-local/kava-cosmos-sdk
