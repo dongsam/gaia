@@ -71,9 +71,11 @@ build: go.sum
 ifeq ($(OS),Windows_NT)
 	go build -mod=readonly $(BUILD_FLAGS) -o build/gaiad.exe ./cmd/gaiad
 	go build -mod=readonly $(BUILD_FLAGS) -o build/gaiacli.exe ./cmd/gaiacli
+	go build -mod=readonly $(BUILD_FLAGS) -o build/gaiatx.exe ./cmd/gaiatx
 else
 	go build -mod=readonly $(BUILD_FLAGS) -o build/gaiad ./cmd/gaiad
 	go build -mod=readonly $(BUILD_FLAGS) -o build/gaiacli ./cmd/gaiacli
+	go build -mod=readonly $(BUILD_FLAGS) -o build/gaiatx ./cmd/gaiatx
 endif
 
 build-linux: go.sum
@@ -89,9 +91,13 @@ endif
 install: go.sum
 	go install -mod=readonly $(BUILD_FLAGS) ./cmd/gaiad
 	go install -mod=readonly $(BUILD_FLAGS) ./cmd/gaiacli
+	go install -mod=readonly $(BUILD_FLAGS) ./cmd/gaiatx
 
 install-debug: go.sum
 	go install -mod=readonly $(BUILD_FLAGS) ./cmd/gaiadebug
+
+install-gaiatx: go.sum
+	go install -mod=readonly $(BUILD_FLAGS) ./cmd/gaiatx
 
 ########################################
 ### Tools & dependencies
